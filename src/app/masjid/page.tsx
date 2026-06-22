@@ -1,9 +1,11 @@
 import { CTASection } from "@/components/ui/CTASection";
+import { ContentImage } from "@/components/ui/ContentImage";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Hero } from "@/components/ui/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { CONTACT, JUMMAH_TIMES } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,26 +21,30 @@ const PROGRAMS = [
     title: "Surat Al-Baqarah Hifz Program",
     description:
       "One ayat daily memorization with revision every other week in the masjid with the instructor on Sundays after Maghrib Salat. For sisters only. Contact sister Maryam at 678-851-6300.",
-    image: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=800&q=80",
+    image: IMAGES.programs.hifz.src,
+    imageAlt: IMAGES.programs.hifz.alt,
   },
   {
     title: "Saturday School",
     description:
       "Saturdays 11 AM to 2 PM for boys and girls 4 years and older. Registrations still open.",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80",
+    image: IMAGES.school.saturdaySchool.src,
+    imageAlt: IMAGES.school.saturdaySchool.alt,
     href: "/saturday-school",
   },
   {
     title: "Noorani Qaida",
     description:
       "Your first step toward learning Arabic and the Holy Quran with Tajweed. Sisters only.",
-    image: "https://images.unsplash.com/photo-1585036156171-3841649478f4?w=800&q=80",
+    image: IMAGES.programs.qaida.src,
+    imageAlt: IMAGES.programs.qaida.alt,
   },
   {
     title: "Brazilian Jiu-Jitsu",
     description:
       "Self-defense martial arts for boys (Friday 5-7 PM) and men (Saturday 5-7 PM). Promotes discipline and physical fitness.",
-    image: "https://images.unsplash.com/photo-1555597673-b21d5c935865?w=800&q=80",
+    image: IMAGES.activities.two.src,
+    imageAlt: IMAGES.activities.two.alt,
   },
 ];
 
@@ -49,9 +55,9 @@ export default function MasjidPage() {
         title="Masjid Al-Athar"
         subtitle="Prayers & Programs"
         description="Open for all five daily prayers and Jumu'ah. Join us for Ramadan activities, educational programs, and community gatherings."
-        image="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=1920&q=80"
-        imageAlt="Community prayer gathering at the masjid"
-        primaryCta={{ label: "Prayer Times", href: "/" }}
+        image={IMAGES.masjid.exterior2021.src}
+        imageAlt={IMAGES.masjid.exterior2021.alt}
+        primaryCta={{ label: "Salah Schedule", href: "/salah-schedule" }}
         secondaryCta={{ label: "Donate", href: "/donations" }}
         compact
       />
@@ -80,7 +86,15 @@ export default function MasjidPage() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.15}>
+          <ContentImage
+            src={IMAGES.activities.one.src}
+            alt={IMAGES.activities.one.alt}
+            aspect="square"
+          />
+        </div>
+
+        <div className="mt-16 grid gap-8 lg:grid-cols-2 lg:items-center">
+          <FadeIn>
             <SectionHeading title="Daily Prayers" align="left" />
             <p className="text-muted-foreground">
               Masjid Al-Athar is open for all five daily prayers. Join our
@@ -98,6 +112,12 @@ export default function MasjidPage() {
               </ul>
             </div>
           </FadeIn>
+
+          <ContentImage
+            src={IMAGES.masjid.potluck.src}
+            alt={IMAGES.masjid.potluck.alt}
+            aspect="square"
+          />
         </div>
       </section>
 
@@ -111,10 +131,10 @@ export default function MasjidPage() {
             {PROGRAMS.map((program, index) => (
               <FadeIn key={program.title} delay={index * 0.1}>
                 <article className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-56 overflow-hidden sm:h-64">
                     <Image
                       src={program.image}
-                      alt={program.title}
+                      alt={program.imageAlt}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 640px) 100vw, 50vw"
@@ -142,6 +162,44 @@ export default function MasjidPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <SectionHeading
+          title="Masjid Gallery"
+          subtitle="Photos from Masjid Al-Athar community life and programs."
+        />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            IMAGES.masjid.exterior2021,
+            IMAGES.masjid.interior,
+            IMAGES.masjid.mosque,
+            IMAGES.masjid.potluck,
+            IMAGES.masjid.eid,
+            IMAGES.slider.welcome,
+          ].map((img) => (
+            <FadeIn key={img.src}>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-white shadow-[var(--shadow-card)] sm:aspect-[3/2]">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  loading="lazy"
+                />
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <ContentImage
+          src={IMAGES.slider.community.src}
+          alt={IMAGES.slider.community.alt}
+          aspect="wide"
+        />
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

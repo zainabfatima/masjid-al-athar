@@ -28,8 +28,8 @@ export function Hero({
 }: HeroProps) {
   return (
     <section
-      className={`relative flex items-center overflow-hidden ${
-        compact ? "min-h-[40vh]" : "min-h-[70vh] sm:min-h-[80vh]"
+      className={`relative flex items-center overflow-hidden bg-white ${
+        compact ? "min-h-[48vh] sm:min-h-[52vh]" : "min-h-[75vh] sm:min-h-[82vh]"
       }`}
       aria-label="Hero section"
     >
@@ -38,31 +38,32 @@ export function Hero({
         alt={imageAlt}
         fill
         priority
-        className="object-cover"
+        className="object-cover object-center brightness-[1.02] contrast-[1.05]"
         sizes="100vw"
       />
       <div className="hero-gradient absolute inset-0" aria-hidden="true" />
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <FadeIn className="max-w-3xl">
+      <div className="hero-gradient-bottom absolute inset-0" aria-hidden="true" />
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <FadeIn className="hero-content-panel max-w-3xl rounded-2xl p-6 sm:p-10">
           {subtitle && (
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent sm:text-base">
+            <p className="mb-2 text-sm font-bold uppercase tracking-widest text-primary sm:text-base">
               {subtitle}
             </p>
           )}
-          <h1 className="font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-3xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl">
             {title}
           </h1>
           {description && (
-            <p className="mt-6 text-lg leading-relaxed text-white/90 sm:text-xl">
+            <p className="mt-4 text-base font-medium leading-relaxed text-muted-foreground sm:mt-6 sm:text-xl">
               {description}
             </p>
           )}
           {(primaryCta || secondaryCta) && (
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-7 flex flex-wrap gap-3 sm:mt-8">
               {primaryCta && (
                 <Button
                   href={primaryCta.href}
-                  variant="secondary"
+                  variant="primary"
                   size="lg"
                   external={primaryCta.external}
                 >
@@ -74,7 +75,6 @@ export function Hero({
                   href={secondaryCta.href}
                   variant="outline"
                   size="lg"
-                  className="border-white text-white hover:bg-white hover:text-primary"
                   external={secondaryCta.external}
                 >
                   {secondaryCta.label}

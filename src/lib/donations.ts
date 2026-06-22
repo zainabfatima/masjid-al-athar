@@ -23,7 +23,7 @@ export const DONATION_CARDS: DonationCardData[] = [
     method: "phone",
     value: "6789033121",
     displayLabel: "Zelle ID",
-    qrImage: "/images/qr/qr-masjid-operations.png",
+    qrImage: "/images/wix/qr-masjid-operations.png",
     zelleNote: "Send via Zelle using phone number",
   },
   {
@@ -35,7 +35,7 @@ export const DONATION_CARDS: DonationCardData[] = [
     method: "email",
     value: "masjidalathar@gmail.com",
     displayLabel: "Zelle Email",
-    qrImage: "/images/qr/qr-sadaqah.png",
+    qrImage: "/images/wix/qr-sadaqah.png",
     zelleNote: "Send via Zelle using email",
   },
   {
@@ -47,7 +47,7 @@ export const DONATION_CARDS: DonationCardData[] = [
     method: "email",
     value: "masjidalatharzakath@gmail.com",
     displayLabel: "Zelle Email",
-    qrImage: "/images/qr/qr-zakat.png",
+    qrImage: "/images/wix/qr-zakat.png",
     zelleNote: "Send via Zelle using email",
   },
 ];

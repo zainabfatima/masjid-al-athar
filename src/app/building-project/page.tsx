@@ -1,10 +1,12 @@
 import { DonationCard } from "@/components/donations/DonationCard";
 import { CTASection } from "@/components/ui/CTASection";
+import { ContentImage } from "@/components/ui/ContentImage";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Hero } from "@/components/ui/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BUILDING_PROJECT, CONTACT } from "@/lib/constants";
 import { DONATION_CARDS } from "@/lib/donations";
+import { IMAGES } from "@/lib/images";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -25,8 +27,8 @@ export default function BuildingProjectPage() {
         title="New Masjid Building Project"
         subtitle="بارك الله فيك"
         description="Help us purchase our own building to better serve the local Muslim community and achieve financial stability."
-        image="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80"
-        imageAlt="New masjid building project"
+        image={IMAGES.slider.mosque.src}
+        imageAlt={IMAGES.slider.mosque.alt}
         primaryCta={{ label: "Donate Now", href: "/donations" }}
         compact
       />
@@ -50,17 +52,11 @@ export default function BuildingProjectPage() {
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.15}>
-            <div className="relative h-72 overflow-hidden rounded-2xl shadow-lg lg:h-80">
-              <Image
-                src="https://images.unsplash.com/photo-1591604129939-f1efa4cfdf08?w=800&q=80"
-                alt="Proposed masjid property"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-          </FadeIn>
+          <ContentImage
+            src={IMAGES.masjid.exterior2021.src}
+            alt={IMAGES.masjid.exterior2021.alt}
+            aspect="square"
+          />
         </div>
       </section>
 
@@ -117,6 +113,14 @@ export default function BuildingProjectPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <ContentImage
+          src={IMAGES.slider.mosque.src}
+          alt={IMAGES.slider.mosque.alt}
+          aspect="wide"
+        />
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <FadeIn>
           <blockquote className="mx-auto max-w-3xl text-center">
@@ -135,24 +139,36 @@ export default function BuildingProjectPage() {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <FadeIn>
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-              <h3 className="font-display text-xl font-bold text-foreground">
-                Importance of the Masjid
-              </h3>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Masjid is called the house of Allah Almighty. In the Quran,
-                Allah Almighty says &ldquo;وَأَنَّ الْمَسَاجِدَ لِلَّهِ&rdquo; and
-                it is stated in a blessed hadith of Sahih Muslim that masjids are
-                the most beloved places to Allah Almighty. The one whose heart is
-                attached to the masjid will be under the shade of the throne of
-                Allah Almighty on the Day of Judgment.
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Masjid plays a basic role to establish a good environment in a
-                Muslim society. It is not only a place of worship — it is also a
-                place where people meet and greet, and a social system prevails
-                everywhere.
-              </p>
+            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <div className="relative h-48">
+                <Image
+                  src={IMAGES.masjid.exterior2021.src}
+                  alt={IMAGES.masjid.exterior2021.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-display text-xl font-bold text-foreground">
+                  Importance of the Masjid
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  Masjid is called the house of Allah Almighty. In the Quran,
+                  Allah Almighty says &ldquo;وَأَنَّ الْمَسَاجِدَ لِلَّهِ&rdquo; and
+                  it is stated in a blessed hadith of Sahih Muslim that masjids are
+                  the most beloved places to Allah Almighty. The one whose heart is
+                  attached to the masjid will be under the shade of the throne of
+                  Allah Almighty on the Day of Judgment.
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  Masjid plays a basic role to establish a good environment in a
+                  Muslim society. It is not only a place of worship — it is also a
+                  place where people meet and greet, and a social system prevails
+                  everywhere.
+                </p>
+              </div>
             </div>
           </FadeIn>
 

@@ -1,9 +1,10 @@
 import { CTASection } from "@/components/ui/CTASection";
+import { ContentImage } from "@/components/ui/ContentImage";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { Hero } from "@/components/ui/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { IMAGES } from "@/lib/images";
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Saturday School",
@@ -18,8 +19,8 @@ export default function SaturdaySchoolPage() {
         title="Saturday School"
         subtitle="Islamic Education"
         description="Saturdays 11 AM to 2 PM for boys and girls 4 years and older. Registrations still open."
-        image="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1920&q=80"
-        imageAlt="Children learning in Islamic school classroom"
+        image={IMAGES.school.saturdaySchool.src}
+        imageAlt={IMAGES.school.saturdaySchool.alt}
         compact
       />
 
@@ -41,17 +42,11 @@ export default function SaturdaySchoolPage() {
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.15}>
-            <div className="relative h-80 overflow-hidden rounded-2xl shadow-lg lg:h-96">
-              <Image
-                src="https://images.unsplash.com/photo-1585036156171-3841649478f4?w=800&q=80"
-                alt="Quran study and Islamic education for youth"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-          </FadeIn>
+          <ContentImage
+            src={IMAGES.school.saturdaySchool.src}
+            alt={IMAGES.school.saturdaySchool.alt}
+            aspect="square"
+          />
         </div>
       </section>
 
@@ -86,6 +81,21 @@ export default function SaturdaySchoolPage() {
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <ContentImage
+            src={IMAGES.programs.qaida.src}
+            alt={IMAGES.programs.qaida.alt}
+            aspect="video"
+          />
+          <ContentImage
+            src={IMAGES.school.assalamuAlikum.src}
+            alt={IMAGES.school.assalamuAlikum.alt}
+            aspect="video"
+          />
         </div>
       </section>
 

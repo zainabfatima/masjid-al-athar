@@ -1,33 +1,24 @@
 import { FeatureCards } from "@/components/home/FeatureCards";
 import { PrayerTimes } from "@/components/home/PrayerTimes";
+import { HeroSlider } from "@/components/home/HeroSlider";
 import { CTASection } from "@/components/ui/CTASection";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { Hero } from "@/components/ui/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { CONTACT } from "@/lib/constants";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Welcome to Masjid Al-Athar, East Cobb Islamic Center — a 501(c)(3) non-profit in Marietta, GA serving our diverse multicultural community.",
+    "Welcome to Masjid Al-Athar, East Cobb Islamic Center — a 501(c)(3) non-profit in Marietta, GA.",
 };
 
 export default function HomePage() {
   return (
     <>
-      <Hero
-        title="Welcome to Masjid Al-Athar"
-        subtitle={CONTACT.address.split(",")[0]}
-        description="Masjid Al-Athar, East Cobb Islamic Center is a 501(c)(3) non-profit organization located in Marietta, GA. We are a diverse multicultural community and we invite all to come learn about the Islamic faith."
-        image="https://images.unsplash.com/photo-1591604129939-f1efa4cfdf08?w=1920&q=80"
-        imageAlt="Mosque exterior with beautiful Islamic architecture"
-        primaryCta={{ label: "Get Directions", href: CONTACT.mapsUrl, external: true }}
-        secondaryCta={{ label: "About Us", href: "/about-us" }}
-      />
+      <HeroSlider />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-3">
+      <section className="section-white mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="grid gap-14 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <FadeIn>
               <SectionHeading
@@ -35,31 +26,30 @@ export default function HomePage() {
                 subtitle="East Cobb Islamic Center"
                 align="left"
               />
-              <p className="text-lg leading-relaxed text-muted-foreground">
-                We welcome you to our masjid — a place of worship, learning, and
-                community for Muslims and visitors of all backgrounds in Marietta,
-                Georgia.
+              <p className="prose-body max-w-3xl text-foreground/90">
+                Masjid Al-Athar, East Cobb Islamic Center is a{" "}
+                <strong className="font-semibold text-foreground">501(c)(3) non-profit</strong>{" "}
+                organization located in Marietta, GA. We are a diverse multicultural
+                community and we invite all to come learn about the Islamic faith.
               </p>
             </FadeIn>
-
-            <FadeIn delay={0.15} className="mt-10">
-              <blockquote className="rounded-2xl border border-border bg-card p-8 shadow-sm">
-                <p className="font-display text-xl italic leading-relaxed text-foreground sm:text-2xl">
-                  &ldquo;Successful indeed are the believers, those who offer
-                  their Salât with all solemnity and full submissiveness.&rdquo;
+            <FadeIn delay={0.15} className="mt-12">
+              <blockquote className="rounded-2xl border border-border bg-white p-8 shadow-[var(--shadow-card)] sm:p-10">
+                <p className="font-display text-xl font-semibold italic leading-relaxed text-foreground sm:text-2xl lg:text-3xl">
+                  &ldquo;Successful indeed are the believers, those who offer their
+                  Salât with all solemnity and full submissiveness.&rdquo;
                 </p>
-                <footer className="mt-4 text-sm font-semibold text-primary">
+                <footer className="mt-5 text-base font-bold text-primary">
                   — Noble Quran, Surah Al-Mu&apos;minun: 1-2
                 </footer>
               </blockquote>
             </FadeIn>
           </div>
-
           <PrayerTimes />
         </div>
       </section>
 
-      <section className="bg-muted/50 py-16">
+      <section className="section-muted border-y border-border py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Our Community"

@@ -18,11 +18,11 @@ interface ButtonProps {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-primary text-primary-foreground hover:bg-primary-light shadow-md hover:shadow-lg",
+    "bg-primary text-primary-foreground shadow-[var(--shadow-soft)] hover:bg-primary-light hover:shadow-[var(--shadow-card)]",
   secondary:
-    "bg-accent text-accent-foreground hover:brightness-110 shadow-md hover:shadow-lg",
+    "bg-accent text-accent-foreground shadow-[var(--shadow-soft)] hover:brightness-105 hover:shadow-[var(--shadow-card)]",
   outline:
-    "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground",
+    "border border-primary/30 bg-card text-primary hover:border-primary hover:bg-primary/5",
   ghost: "text-primary hover:bg-muted",
 };
 
@@ -44,7 +44,7 @@ export function Button({
   external,
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:scale-[1.02] active:scale-[0.98]";
+    "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.98]";
   const styles = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
 
   if (href) {

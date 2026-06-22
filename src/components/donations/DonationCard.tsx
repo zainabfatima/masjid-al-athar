@@ -43,10 +43,10 @@ export function DonationCard({ data }: DonationCardProps) {
 
   return (
     <>
-      <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-        <div className="border-b border-border bg-muted/50 px-6 py-5">
+      <article className="group flex flex-col overflow-hidden rounded-2xl border border-border/80 bg-card card-elevated transition-all duration-300 hover:-translate-y-0.5">
+        <div className="border-b border-border/60 bg-muted/40 px-6 py-5">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-transform duration-300 group-hover:scale-110">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-105">
               <Icon className="h-6 w-6" aria-hidden="true" />
             </div>
             <div>
