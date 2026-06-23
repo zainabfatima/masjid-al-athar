@@ -33,7 +33,7 @@ export default function BuildingProjectPage() {
         compact
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <FadeIn>
             <SectionHeading title="Masjid Al-Athar Story" align="left" />
@@ -60,7 +60,7 @@ export default function BuildingProjectPage() {
         </div>
       </section>
 
-      <section className="bg-muted/50 py-16">
+      <section className="bg-muted/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Property Details"
@@ -121,7 +121,7 @@ export default function BuildingProjectPage() {
         />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <FadeIn>
           <blockquote className="mx-auto max-w-3xl text-center">
             <p className="font-display text-2xl italic leading-relaxed text-foreground">
@@ -200,7 +200,7 @@ export default function BuildingProjectPage() {
         </div>
       </section>
 
-      <section className="bg-muted/50 py-16">
+      <section className="bg-muted/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Donate via Zelle"

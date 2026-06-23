@@ -13,6 +13,7 @@ interface HeroProps {
   secondaryCta?: { label: string; href: string; external?: boolean };
   children?: ReactNode;
   compact?: boolean;
+  imageFit?: "cover" | "contain";
 }
 
 export function Hero({
@@ -25,11 +26,21 @@ export function Hero({
   secondaryCta,
   children,
   compact = false,
+  imageFit = "cover",
 }: HeroProps) {
+  const imageClass =
+    imageFit === "contain"
+      ? "object-contain object-center p-4 sm:p-8"
+      : "object-cover object-center brightness-[1.02] contrast-[1.05]";
+
   return (
     <section
-      className={`relative flex items-center overflow-hidden bg-white ${
-        compact ? "min-h-[48vh] sm:min-h-[52vh]" : "min-h-[75vh] sm:min-h-[82vh]"
+      className={`relative flex items-center overflow-hidden ${
+        imageFit === "contain" ? "bg-muted/40" : "bg-white"
+      } ${
+        compact
+          ? "min-h-[42vh] sm:min-h-[48vh]"
+          : "min-h-[52vh] sm:min-h-[75vh] lg:min-h-[82vh]"
       }`}
       aria-label="Hero section"
     >
@@ -38,23 +49,29 @@ export function Hero({
         alt={imageAlt}
         fill
         priority
-        className="object-cover object-center brightness-[1.02] contrast-[1.05]"
-        sizes="100vw"
+        className={imageClass}
+        sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1280px"
       />
-      <div className="hero-gradient absolute inset-0" aria-hidden="true" />
-      <div className="hero-gradient-bottom absolute inset-0" aria-hidden="true" />
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-        <FadeIn className="hero-content-panel max-w-3xl rounded-2xl p-6 sm:p-10">
+      <div
+        className={`absolute inset-0 ${imageFit === "contain" ? "hero-gradient opacity-60" : "hero-gradient"}`}
+        aria-hidden="true"
+      />
+      <div
+        className={`absolute inset-0 ${imageFit === "contain" ? "hero-gradient-bottom opacity-70" : "hero-gradient-bottom"}`}
+        aria-hidden="true"
+      />
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <FadeIn className="hero-content-panel max-w-3xl rounded-2xl p-5 sm:p-10">
           {subtitle && (
-            <p className="mb-2 text-sm font-bold uppercase tracking-widest text-primary sm:text-base">
+            <p className="mb-2 text-xs font-bold uppercase tracking-widest text-primary sm:text-base">
               {subtitle}
             </p>
           )}
-          <h1 className="font-display text-3xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-2xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl">
             {title}
           </h1>
           {description && (
-            <p className="mt-4 text-base font-medium leading-relaxed text-muted-foreground sm:mt-6 sm:text-xl">
+            <p className="mt-3 text-sm font-medium leading-relaxed text-muted-foreground sm:mt-6 sm:text-xl">
               {description}
             </p>
           )}

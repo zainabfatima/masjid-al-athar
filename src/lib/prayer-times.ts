@@ -109,6 +109,48 @@ export function getNextPrayer(
   };
 }
 
+export function getNextIqamah(
+  prayers: PrayerSlot[],
+  now = new Date()
+): { prayer: PrayerName; iqamah24: string; isTomorrow: boolean } {
+  for (const prayer of prayers) {
+    const [h, m] = prayer.iqamah.split(":").map(Number);
+    const target = new Date(now);
+    target.setHours(h, m, 0, 0);
+    if (target.getTime() > now.getTime()) {
+      return { prayer: prayer.name, iqamah24: prayer.iqamah, isTomorrow: false };
+    }
+  }
+
+  return {
+    prayer: "Fajr",
+    iqamah24: prayers[0].iqamah,
+    isTomorrow: true,
+  };
+}
+
+export function msUntilIqamah(iqamah24: string, isTomorrow: boolean, now = new Date()): number {
+  const [h, m] = iqamah24.split(":").map(Number);
+  const target = new Date(now);
+  target.setHours(h, m, 0, 0);
+  if (isTomorrow || target.getTime() <= now.getTime()) {
+    target.setDate(target.getDate() + 1);
+  }
+  return Math.max(0, target.getTime() - now.getTime());
+}
+
+export function formatCountdown(ms: number): string {
+  const totalSec = Math.floor(ms / 1000);
+  const hrs = Math.floor(totalSec / 3600);
+  const mins = Math.floor((totalSec % 3600) / 60);
+  const secs = totalSec % 60;
+  return `${String(hrs).padStart(2, "0")}:${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+}
+
+export function formatCompactTime(time24: string): string {
+  return to12Hour(time24);
+}
+
 export const FALLBACK_TODAY: PrayerSlot[] = buildPrayerSlots({
   Fajr: "05:15",
   Dhuhr: "13:30",

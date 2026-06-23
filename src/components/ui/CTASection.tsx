@@ -18,7 +18,7 @@ export function CTASection({
   children,
 }: CTASectionProps) {
   return (
-    <section className="cta-gradient relative overflow-hidden py-16 sm:py-20">
+    <section className="cta-gradient relative overflow-hidden py-10 sm:py-16 lg:py-20">
       <div
         className="absolute inset-0 opacity-[0.07]"
         style={{
@@ -29,13 +29,13 @@ export function CTASection({
       />
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
         <FadeIn>
-          <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="font-display text-2xl font-bold tracking-tight text-white sm:text-4xl">
             {title}
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/85">
             {description}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <Button
               href={primaryCta.href}
               variant="secondary"

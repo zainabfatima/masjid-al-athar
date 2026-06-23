@@ -18,12 +18,12 @@ export function SectionHeading({
   const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
 
   return (
-    <div className={`mb-12 max-w-4xl ${alignClass} ${className}`}>
-      <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+    <div className={`mb-8 max-w-4xl sm:mb-12 ${alignClass} ${className}`}>
+      <h2 className="font-display text-2xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-lg font-medium leading-relaxed text-muted-foreground sm:text-xl">
+        <p className="mt-3 text-base font-medium leading-relaxed text-muted-foreground sm:mt-4 sm:text-xl">
           {subtitle}
         </p>
       )}

@@ -52,7 +52,7 @@ export default function FamilyCounselingPage() {
         compact
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <FadeIn>
             <blockquote className="border-l-4 border-primary pl-6 italic text-foreground">

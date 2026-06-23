@@ -24,7 +24,7 @@ export default function IslamicWeddingPage() {
         compact
       />
 
-      <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-3xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <FadeIn>
           <SectionHeading title="Nikah Services" align="left" />
           <p className="leading-relaxed text-muted-foreground">

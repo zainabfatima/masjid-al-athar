@@ -27,6 +27,11 @@ const nextConfig: NextConfig = {
       },
       { source: "/voluntary-oportunities", destination: "/volunteer", permanent: true },
       { source: "/new-muslims", destination: "/services/new-muslims", permanent: true },
+      {
+        source: "/copy-of-cookies-policy",
+        destination: "/privacy-policy",
+        permanent: true,
+      },
     ];
   },
 };

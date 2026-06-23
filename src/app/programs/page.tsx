@@ -29,7 +29,7 @@ export default function ProgramsPage() {
         compact
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <SectionHeading
           title="Current Programs"
           subtitle="Educational programs rooted in the Quran and authentic Sunnah."
@@ -73,7 +73,7 @@ export default function ProgramsPage() {
         </div>
       </section>
 
-      <section className="bg-muted/50 py-16">
+      <section className="bg-muted/50 py-10 sm:py-16">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <FadeIn>
             <h3 className="font-display text-2xl font-bold text-foreground">

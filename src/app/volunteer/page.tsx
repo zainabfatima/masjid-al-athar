@@ -34,7 +34,7 @@ export default function VolunteerPage() {
         compact
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <SectionHeading
           title="Volunteer Opportunities"
           subtitle="Our diverse programs cater to various interests and age groups."

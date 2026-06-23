@@ -66,7 +66,7 @@ export function SalahScheduleContent() {
 
   return (
     <>
-      <section className="section-white border-b border-border py-16 sm:py-20">
+      <section className="section-white border-b border-border py-10 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-3">
             {highlights.map((item, i) => (
@@ -88,7 +88,7 @@ export function SalahScheduleContent() {
         </div>
       </section>
 
-      <section className="section-muted border-b border-border py-16 sm:py-20">
+      <section className="section-muted border-b border-border py-10 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="mb-10 text-center">
@@ -109,7 +109,7 @@ export function SalahScheduleContent() {
         </div>
       </section>
 
-      <section className="section-white py-16 sm:py-20">
+      <section className="section-white py-10 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1fr_280px]">
             <MonthlyScheduleTable
@@ -163,7 +163,7 @@ export function SalahScheduleContent() {
         </div>
       </section>
 
-      <section className="section-muted border-t border-border py-16 sm:py-20">
+      <section className="section-muted border-t border-border py-10 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <JumuahSection />
           <div className="mt-10 grid gap-4 sm:grid-cols-3">

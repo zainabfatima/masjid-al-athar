@@ -18,6 +18,10 @@ export const CONTACT = {
     "https://www.google.com/maps/search/?api=1&query=1180+Franklin+Gateway+SE+Marietta+GA+30067",
 };
 
+export const SOCIAL_LINKS = {
+  youtube: "https://www.youtube.com/@masjidal-athar776",
+} as const;
+
 export const BUILDING_PROJECT = {
   address: "1611 Sands Place SE, Marietta GA 30067",
   downPaymentGoal: 200000,
@@ -170,9 +174,15 @@ export const HOME_FEATURES = [
   },
 ] as const;
 
+export const LEGAL_LINKS: NavLink[] = [
+  { href: "/terms-and-conditions", label: "Terms and Conditions" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+];
+
 export const ALL_SITEMAP_PATHS = [
   ...NAV_LINKS,
   ...RESOURCE_LINKS,
+  ...LEGAL_LINKS,
 ].filter(
   (link, index, self) => self.findIndex((l) => l.href === link.href) === index
 );

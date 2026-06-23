@@ -62,7 +62,7 @@ export default function MasjidPage() {
         compact
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-2">
           <FadeIn>
             <SectionHeading title="Salat Al-Jumu'ah" align="left" />
@@ -121,7 +121,7 @@ export default function MasjidPage() {
         </div>
       </section>
 
-      <section className="bg-muted/50 py-16">
+      <section className="bg-muted/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Masjid Al-Athar Activities"
@@ -164,7 +164,7 @@ export default function MasjidPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <SectionHeading
           title="Masjid Gallery"
           subtitle="Photos from Masjid Al-Athar community life and programs."
@@ -202,7 +202,7 @@ export default function MasjidPage() {
         />
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="rounded-2xl border border-border bg-card p-8 shadow-sm lg:p-12">
             <div className="grid gap-8 lg:grid-cols-2">

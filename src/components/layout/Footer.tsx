@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { CONTACT, NAV_LINKS, RESOURCE_LINKS, SITE_NAME, SITE_TAGLINE } from "@/lib/constants";
+import { CONTACT, LEGAL_LINKS, NAV_LINKS, RESOURCE_LINKS, SITE_NAME, SITE_TAGLINE } from "@/lib/constants";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="mt-auto border-t border-border/80 bg-card/50">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block">
               <span className="font-display text-xl font-bold text-primary">
@@ -30,7 +30,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="inline-flex min-h-[40px] items-center text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -48,7 +48,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="inline-flex min-h-[40px] items-center text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
                   </Link>
@@ -99,11 +99,25 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-8 flex flex-col items-center gap-4 border-t border-border pt-6 sm:mt-10 sm:flex-row sm:justify-between sm:pt-8">
+          <p className="text-center text-sm text-muted-foreground sm:text-left">
             © {currentYear} {SITE_NAME}. All rights reserved.
           </p>
-          <p className="text-sm italic text-muted-foreground">
+          <nav
+            className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2"
+            aria-label="Legal"
+          >
+            {LEGAL_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="inline-flex min-h-[44px] items-center text-sm font-medium text-foreground transition-colors hover:text-primary"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          <p className="max-w-xs text-center text-sm italic text-muted-foreground sm:max-w-none sm:text-right">
             &ldquo;Islamic Faith in the Hearts of the People&rdquo;
           </p>
         </div>

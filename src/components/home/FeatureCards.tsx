@@ -14,7 +14,7 @@ export function FeatureCards() {
             href={feature.href}
             className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white card-elevated hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
-            <div className="relative h-52 overflow-hidden sm:h-60">
+            <div className="relative h-40 overflow-hidden sm:h-52 lg:h-60">
               <Image
                 src={feature.image}
                 alt={feature.imageAlt}
@@ -24,8 +24,8 @@ export function FeatureCards() {
                 loading="lazy"
               />
             </div>
-            <div className="flex flex-1 flex-col p-6">
-              <h3 className="font-display text-xl font-bold text-foreground">
+            <div className="flex flex-1 flex-col p-4 sm:p-6">
+              <h3 className="font-display text-lg font-bold text-foreground sm:text-xl">
                 {feature.title}
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-muted-foreground">

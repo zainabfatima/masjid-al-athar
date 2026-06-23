@@ -79,7 +79,7 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b border-border bg-background transition-shadow duration-300 ${
+      className={`safe-top sticky top-0 z-50 border-b border-border bg-background transition-shadow duration-300 ${
         scrolled ? "shadow-md" : "shadow-sm"
       }`}
     >
@@ -107,7 +107,7 @@ export function Header() {
             <button
               type="button"
               onClick={toggleTheme}
-              className="rounded-full p-2 text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full p-2.5 text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
             >
               {resolvedTheme === "dark" ? (
@@ -122,7 +122,7 @@ export function Header() {
           </Button>
           <button
             type="button"
-            className="rounded-lg p-2 hover:bg-muted lg:hidden"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg p-2.5 hover:bg-muted lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -188,16 +188,16 @@ export function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 top-[52px] z-40 overflow-y-auto bg-background sm:top-[56px] lg:hidden ${
+        className={`safe-bottom fixed inset-0 top-14 z-40 overflow-y-auto bg-background lg:hidden ${
           mobileOpen ? "visible opacity-100" : "invisible pointer-events-none opacity-0"
         }`}
       >
-        <nav className="flex flex-col gap-1 px-4 py-6" aria-label="Mobile navigation">
+        <nav className="flex flex-col gap-1 px-4 py-4 pb-8" aria-label="Mobile navigation">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`rounded-xl px-4 py-3 text-lg font-semibold ${
+              className={`flex min-h-[48px] items-center rounded-xl px-4 py-3 text-base font-semibold sm:text-lg ${
                 isActive(pathname, link.href)
                   ? "bg-primary text-primary-foreground"
                   : "text-foreground hover:bg-muted"
@@ -208,7 +208,7 @@ export function Header() {
           ))}
           <button
             type="button"
-            className="flex items-center justify-between rounded-xl px-4 py-3 text-lg font-semibold text-foreground hover:bg-muted"
+            className="flex min-h-[48px] items-center justify-between rounded-xl px-4 py-3 text-base font-semibold text-foreground hover:bg-muted sm:text-lg"
             onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
             aria-expanded={mobileResourcesOpen}
           >
@@ -222,7 +222,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg py-2.5 pl-8 pr-4 text-base font-medium text-foreground hover:bg-muted"
+                className="flex min-h-[44px] items-center rounded-lg py-2.5 pl-8 pr-4 text-base font-medium text-foreground hover:bg-muted"
               >
                 {link.label}
               </Link>

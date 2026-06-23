@@ -1,6 +1,6 @@
 import { DonationCard } from "@/components/donations/DonationCard";
+import { FeaturedHadithQuote } from "@/components/donations/FeaturedHadithQuote";
 import { ContentImage } from "@/components/ui/ContentImage";
-import { Hero } from "@/components/ui/Hero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { CTASection } from "@/components/ui/CTASection";
@@ -19,26 +19,19 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Donations",
   description:
-    "Support Masjid Al-Athar through Zelle donations for masjid operations, sadaqah, and zakat-ul-maal. All donations are tax deductible.",
+    "Support Masjid Al-Athar through Zelle donations for masjid operations, sadaqah, zakat, children's activities, and community events. All donations are tax deductible.",
 };
 
 export default function DonationsPage() {
   return (
     <>
-      <Hero
-        title="Support Masjid Al-Athar"
-        subtitle="Donations"
-        description="Your generous contributions help sustain our masjid, educational programs, and community services. All donations are tax deductible."
-        image={IMAGES.slider.donations.src}
-        imageAlt={IMAGES.slider.donations.alt}
-        compact
-      />
-
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="section-white border-b border-border mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <SectionHeading
           title="Support Masjid Al-Athar"
           subtitle="Your generous contributions help sustain our masjid, educational programs, and community services."
         />
+
+        <FeaturedHadithQuote />
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {DONATION_CARDS.map((card, index) => (
@@ -49,7 +42,7 @@ export default function DonationsPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-primary/5 py-16">
+      <section className="border-y border-border bg-primary/5 py-10 sm:py-16">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
           <FadeIn>
             <h3 className="font-display text-2xl font-bold text-foreground">
@@ -66,7 +59,7 @@ export default function DonationsPage() {
         </div>
       </section>
 
-      <section className="bg-muted/50 py-16">
+      <section className="bg-muted/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <FadeIn>
@@ -112,7 +105,7 @@ export default function DonationsPage() {
                 <dl className="mt-4 space-y-4 text-sm">
                   <div>
                     <dt className="font-semibold text-foreground">CashApp</dt>
-                    <dd className="flex items-center gap-2 text-muted-foreground">
+                    <dd className="flex flex-wrap items-center gap-2 text-muted-foreground">
                       <Image
                         src={IMAGES.payments.cashapp.src}
                         alt={IMAGES.payments.cashapp.alt}
@@ -149,7 +142,7 @@ export default function DonationsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <div className="grid gap-8 lg:grid-cols-3">
           <FadeIn>
             <article className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
@@ -168,13 +161,15 @@ export default function DonationsPage() {
                   Zakat-ul-Maal
                 </h3>
                 <blockquote className="mt-4 border-l-4 border-primary pl-4 text-sm italic text-muted-foreground">
-                  &ldquo;Alms are for the poor and the needy and those employed to
-                  manage the funds, for those whose hearts have turned to truth
-                  and belief recently, for those in slavery (and for the freedom
-                  of captives) and in debt, and for fighters for the cause of
-                  Allah and for the wayfarer ordered by Allah, and Allah is All
-                  knowing All Wise.&rdquo;
+                  &ldquo;Indeed, the charities are only for the poor, the needy,
+                  those employed to collect them, those whose hearts are to be
+                  reconciled, for freeing captives, for those in debt, for the
+                  cause of Allah, and for the traveler — an obligation from
+                  Allah.&rdquo;
                 </blockquote>
+                <p className="mt-3 text-xs font-bold text-primary sm:text-sm">
+                  — Surah At-Tawbah, Ayah 9:60 (Noble Quran)
+                </p>
               </div>
             </article>
           </FadeIn>
@@ -203,14 +198,18 @@ export default function DonationsPage() {
                 <p className="mt-4 text-sm font-semibold text-foreground">
                   Eligible recipients:
                 </p>
-                <ul className="mt-2 grid grid-cols-2 gap-1 text-sm text-muted-foreground">
+                <ul className="mt-2 grid grid-cols-1 gap-1 text-sm text-muted-foreground sm:grid-cols-2">
                   {SADAQAH_RECIPIENTS.map((r) => (
                     <li key={r}>• {r}</li>
                   ))}
                 </ul>
-                <p className="mt-4 text-sm italic text-muted-foreground">
-                  The believer&apos;s shade on the Day of Resurrection will be his
-                  Sadaqah. (Tirmidhi: 1925)
+                <blockquote className="mt-4 border-l-4 border-primary pl-4 text-sm italic text-muted-foreground">
+                  &ldquo;The believer&apos;s shade on the Day of Resurrection will
+                  be his charity.&rdquo;
+                </blockquote>
+                <p className="mt-2 text-xs font-bold text-primary sm:text-sm">
+                  — Jami&apos; at-Tirmidhi, Hadith 1925 (Hasan Sahih) · Narrated
+                  by Abu Hurairah (RA)
                 </p>
               </div>
             </article>
@@ -236,15 +235,21 @@ export default function DonationsPage() {
                   {ZAKAT_FITR_AMOUNT}
                 </p>
                 <blockquote className="mt-4 border-l-4 border-accent pl-4 text-sm italic text-muted-foreground">
-                  &ldquo;Keep up the prayer and pay the prescribed alms. Whatever
-                  good you store up for yourselves, you will find it with God: He
-                  sees everything you do.&rdquo; — Holy Quran 2:110
+                  &ldquo;And establish prayer and give zakah, and whatever good
+                  you put forward for yourselves — you will find it with Allah.
+                  Indeed, Allah of what you do is Seeing.&rdquo;
                 </blockquote>
+                <p className="mt-2 text-xs font-bold text-primary sm:text-sm">
+                  — Surah Al-Baqarah, Ayah 2:110 (Noble Quran)
+                </p>
                 <p className="mt-4 text-sm text-muted-foreground">
-                  Ibn &apos;Abbas (RAA) narrated that the Messenger of Allah (ﷺ)
-                  enjoined Zakat-ul-fitr on the one who fasts to purify him from
+                  Ibn &apos;Abbas (RA) narrated that the Messenger of Allah (ﷺ)
+                  enjoined Zakat-ul-Fitr on the one who fasts to purify him from
                   any indecent act or speech and for the purpose of providing food
                   for the needy.
+                </p>
+                <p className="mt-2 text-xs font-semibold text-muted-foreground">
+                  — Sunan Abi Dawud, Hadith 1609 · Sahih al-Bukhari, Hadith 1503
                 </p>
               </div>
             </article>
@@ -252,22 +257,9 @@ export default function DonationsPage() {
         </div>
       </section>
 
-      <section className="bg-muted/50 py-16">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <FadeIn>
-            <blockquote className="font-display text-xl italic leading-relaxed text-foreground sm:text-2xl">
-              &ldquo;The parable of those who spend their possessions for the
-              sake of Allah SWT is that of a grain out of which grow seven ears,
-              in every ear a hundred grains: for Allah grants manifold increase
-              unto whom He wills; and Allah is infinite, all-knowing.&rdquo;
-            </blockquote>
-          </FadeIn>
-        </div>
-      </section>
-
       <CTASection
         title="New Masjid Building Project"
-        description="Whoever builds a mosque for Allah, then Allah will build a house for him in Paradise."
+        description="Whoever builds a mosque for Allah, Allah will build for him a house like it in Paradise."
         primaryCta={{ label: "Support Building Project", href: "/building-project" }}
         secondaryCta={{ label: "Learn About Masjid", href: "/masjid" }}
       />

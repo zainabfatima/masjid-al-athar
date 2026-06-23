@@ -81,6 +81,14 @@ export const IMAGES = {
     },
     zakat: { src: w("qr-zakat.png"), alt: "Zelle QR code for Zakat-ul-Maal" },
     sadaqah: { src: w("qr-sadaqah.png"), alt: "Zelle QR code for Sadaqah" },
+    childrenActivities: {
+      src: w("qr-children-activities.png"),
+      alt: "Zelle QR code for children activities",
+    },
+    communityEvents: {
+      src: w("qr-community-events.png"),
+      alt: "Zelle QR code for community events",
+    },
     paypal: { src: w("qr-paypal.png"), alt: "PayPal donation QR code" },
   },
   payments: {

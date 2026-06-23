@@ -1,5 +1,11 @@
 export type DonationMethod = "phone" | "email";
-export type DonationIcon = "building" | "heart-hands" | "scale";
+export type DonationIcon =
+  | "building"
+  | "landmark"
+  | "heart-hands"
+  | "scale"
+  | "users"
+  | "calendar";
 
 export interface DonationCardData {
   id: string;
@@ -8,8 +14,9 @@ export interface DonationCardData {
   description: string;
   method: DonationMethod;
   value: string;
+  displayValue?: string;
   displayLabel: string;
-  qrImage: string;
+  qrImage?: string;
   zelleNote: string;
 }
 
@@ -22,7 +29,21 @@ export const DONATION_CARDS: DonationCardData[] = [
       "Support daily masjid operations, utilities, maintenance, educational programs, and community services.",
     method: "phone",
     value: "6789033121",
-    displayLabel: "Zelle ID",
+    displayValue: "678-903-3121",
+    displayLabel: "Zelle Phone",
+    qrImage: "/images/wix/qr-masjid-operations.png",
+    zelleNote: "Send via Zelle using phone number",
+  },
+  {
+    id: "new-masjid-construction",
+    title: "New Masjid Construction",
+    icon: "landmark",
+    description:
+      "Support our new masjid building project at 1611 Sands Place SE, Marietta, GA — help secure a permanent home for our community.",
+    method: "phone",
+    value: "6789033121",
+    displayValue: "678-903-3121",
+    displayLabel: "Zelle Phone",
     qrImage: "/images/wix/qr-masjid-operations.png",
     zelleNote: "Send via Zelle using phone number",
   },
@@ -49,6 +70,32 @@ export const DONATION_CARDS: DonationCardData[] = [
     displayLabel: "Zelle Email",
     qrImage: "/images/wix/qr-zakat.png",
     zelleNote: "Send via Zelle using email",
+  },
+  {
+    id: "children-activities",
+    title: "Children Activities",
+    icon: "users",
+    description:
+      "Support Islamic education, youth programs, and activities for children at the masjid.",
+    method: "phone",
+    value: "6788516300",
+    displayValue: "+1 (678) 851-6300",
+    displayLabel: "Zelle Phone",
+    qrImage: "/images/wix/qr-children-activities.png",
+    zelleNote: "Send via Zelle using phone number",
+  },
+  {
+    id: "community-events",
+    title: "Community Events",
+    icon: "calendar",
+    description:
+      "Help fund community gatherings, lectures, celebrations, and outreach events.",
+    method: "phone",
+    value: "6788516300",
+    displayValue: "+1 (678) 851-6300",
+    displayLabel: "Zelle Phone",
+    qrImage: "/images/wix/qr-community-events.png",
+    zelleNote: "Send via Zelle using phone number",
   },
 ];
 

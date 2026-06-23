@@ -4,23 +4,19 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const outputDir = path.join(__dirname, "..", "public", "images", "qr");
+const outputDir = path.join(__dirname, "..", "public", "images", "wix");
 
+/** Locally generated Zelle QR codes (Wix CDN provides the main donation QRs) */
 const donations = [
   {
-    filename: "qr-masjid-operations.png",
-    value: "6789033121",
-    label: "Masjid Operations",
+    filename: "qr-children-activities.png",
+    value: "6788516300",
+    label: "Children Activities",
   },
   {
-    filename: "qr-sadaqah.png",
-    value: "masjidalathar@gmail.com",
-    label: "Sadaqah",
-  },
-  {
-    filename: "qr-zakat.png",
-    value: "masjidalatharzakath@gmail.com",
-    label: "Zakat-ul-Maal",
+    filename: "qr-community-events.png",
+    value: "6788516300",
+    label: "Community Events",
   },
 ];
 
@@ -32,7 +28,7 @@ for (const donation of donations) {
     width: 400,
     margin: 2,
     color: {
-      dark: "#0b5e4a",
+      dark: "#0d9488",
       light: "#ffffff",
     },
     errorCorrectionLevel: "H",
@@ -42,4 +38,4 @@ for (const donation of donations) {
   console.log(`Generated ${donation.filename} for ${donation.label}`);
 }
 
-console.log("All QR codes generated successfully.");
+console.log("Zelle QR codes generated.");

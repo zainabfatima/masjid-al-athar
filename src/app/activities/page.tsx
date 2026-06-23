@@ -23,12 +23,13 @@ export default function ActivitiesPage() {
         description="Join us at Masjid Al-Athar and become part of the positive impact we create together through activities and volunteer opportunities."
         image={IMAGES.activities.one.src}
         imageAlt={IMAGES.activities.one.alt}
+        imageFit="contain"
         primaryCta={{ label: "Volunteer", href: "/volunteer" }}
         secondaryCta={{ label: "Donate", href: "/donations" }}
         compact
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <FadeIn>
             <h2 className="font-display text-3xl font-bold text-foreground">
@@ -62,12 +63,12 @@ export default function ActivitiesPage() {
           <ContentImage
             src={IMAGES.activities.two.src}
             alt={IMAGES.activities.two.alt}
-            aspect="square"
+            aspect="intrinsic"
           />
         </div>
       </section>
 
-      <section className="bg-muted/50 py-16">
+      <section className="bg-muted/50 py-10 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             title="Community Volunteerism"
@@ -77,12 +78,12 @@ export default function ActivitiesPage() {
             <ContentImage
               src={IMAGES.masjid.potluck.src}
               alt={IMAGES.masjid.potluck.alt}
-              aspect="video"
+              aspect="intrinsic"
             />
             <ContentImage
               src={IMAGES.masjid.eid.src}
               alt={IMAGES.masjid.eid.alt}
-              aspect="video"
+              aspect="intrinsic"
             />
           </div>
           <div className="mt-10 text-center">

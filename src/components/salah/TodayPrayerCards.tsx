@@ -63,7 +63,7 @@ export function TodayPrayerCards({
         </FadeIn>
       )}
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {loading
           ? Array.from({ length: 5 }).map((_, i) => (
               <div key={i} className="skeleton h-36 rounded-2xl" />
@@ -74,7 +74,7 @@ export function TodayPrayerCards({
               return (
                 <FadeIn key={prayer.name} delay={index * 0.06}>
                   <div
-                    className={`rounded-2xl border bg-white p-5 shadow-[var(--shadow-card)] transition-shadow ${
+                    className={`rounded-2xl border bg-white p-4 shadow-[var(--shadow-card)] transition-shadow sm:p-5 ${
                       isNext
                         ? "border-primary ring-2 ring-primary/20"
                         : "border-border"
