@@ -90,12 +90,11 @@ export const DONATION_CARDS: DonationCardData[] = [
     icon: "calendar",
     description:
       "Help fund community gatherings, lectures, celebrations, and outreach events.",
-    method: "phone",
-    value: "6788516300",
-    displayValue: "+1 (678) 851-6300",
-    displayLabel: "Zelle Phone",
+    method: "email",
+    value: "masjidalathar@gmail.com",
+    displayLabel: "Zelle Email",
     qrImage: "/images/wix/qr-community-events.png",
-    zelleNote: "Send via Zelle using phone number",
+    zelleNote: "Send via Zelle using email",
   },
 ];
 

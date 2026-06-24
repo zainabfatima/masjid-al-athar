@@ -34,10 +34,7 @@ const NAMED = {
   "program-hifz.png": "dd25c3_6853e93c4e2b439e8e27786d6115ae67~mv2.png",
   "program-studies.png": "dd25c3_607fcd88a1e0470a9d498ef5469147a7~mv2.png",
   "program-sirah.png": "dd25c3_ad3ef8381e4c4fcc8c98053d26d55eb4~mv2.png",
-  // Donation QR codes (from live site)
-  "qr-masjid-operations.png": "9cc235_aff362e2fb7c42ca9f89059a128c44f3~mv2.png",
-  "qr-zakat.png": "9cc235_3bb2d124920e407c8361e8b21479cd7e~mv2.png",
-  "qr-sadaqah.png": "9cc235_34d543e191bc4ee99bf209151c50f110~mv2.png",
+  // PayPal QR (Zelle QRs are generated locally in generate-qr.mjs)
   "qr-paypal.png": "9cc235_b9ef8e6568e9475681766b99cce18ef2~mv2.png",
   // Payment logos
   "paypal-logo.png": "9cc235_94f43c4230784961924f3efd60bc8e33~mv2.png",

@@ -6,7 +6,8 @@ export const HOME_SLIDES = [
     id: "welcome",
     image: IMAGES.slider.welcome.src,
     imageAlt: IMAGES.slider.welcome.alt,
-    title: "Welcome to Masjid Al-Athar",
+    title: "Welcome to",
+    brandName: "Masjid Al-Athar",
     subtitle: "East Cobb Islamic Center",
     description:
       "Masjid Al-Athar is a 501(c)(3) non-profit organization located in Marietta, GA. We are a diverse multicultural community and we invite all to come learn about the Islamic faith.",

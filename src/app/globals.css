@@ -117,6 +117,31 @@ body {
   }
 }
 
+.brand-title {
+  font-family: var(--font-playfair), Georgia, serif;
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark) 0%,
+    var(--primary) 45%,
+    var(--primary-light) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .brand-title {
+  background: linear-gradient(
+    135deg,
+    var(--primary-light) 0%,
+    var(--primary) 55%,
+    #99f6e4 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Consistent page section spacing */
 .section-pad {
   padding-top: 2.5rem;

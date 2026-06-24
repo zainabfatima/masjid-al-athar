@@ -20,10 +20,17 @@ export default function HomePage() {
 
       <section className="section-white mx-auto max-w-7xl px-4 py-12 sm:py-20 sm:px-6 lg:px-8">
         <FadeIn>
+          <p className="brand-title text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Masjid Al-Athar
+          </p>
+          <p className="mt-1 text-sm font-semibold uppercase tracking-widest text-muted-foreground sm:text-base">
+            East Cobb Islamic Center
+          </p>
           <SectionHeading
             title="Assalamu Alaikum wa Rahmatullah"
-            subtitle="East Cobb Islamic Center"
+            subtitle="A warm welcome to our community"
             align="left"
+            className="mt-8"
           />
           <p className="prose-body max-w-3xl text-foreground/90">
             Masjid Al-Athar, East Cobb Islamic Center is a{" "}

@@ -73,9 +73,20 @@ export function HeroSlider() {
                 <p className="mb-2 text-xs font-bold uppercase tracking-widest text-primary sm:text-sm">
                   {slide.subtitle}
                 </p>
-                <h1 className="font-display text-2xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
-                  {slide.title}
-                </h1>
+                {"brandName" in slide && slide.brandName ? (
+                  <h1 className="leading-tight">
+                    <span className="block font-display text-lg font-semibold text-muted-foreground sm:text-xl">
+                      {slide.title}
+                    </span>
+                    <span className="brand-title mt-1 block text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
+                      {slide.brandName}
+                    </span>
+                  </h1>
+                ) : (
+                  <h1 className="font-display text-2xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
+                    {slide.title}
+                  </h1>
+                )}
                 <p className="mt-3 text-sm font-medium leading-relaxed text-muted-foreground sm:mt-4 sm:text-lg">
                   {slide.description}
                 </p>

@@ -97,7 +97,13 @@ export function Header() {
             height={40}
             className="h-9 w-9 shrink-0 rounded-full sm:h-10 sm:w-10"
           />
-          <span className="truncate whitespace-nowrap font-display text-sm font-bold text-foreground sm:text-base lg:text-lg">
+          <span
+            className={`truncate whitespace-nowrap font-display font-bold ${
+              pathname === "/"
+                ? "brand-title text-xl sm:text-2xl lg:text-3xl"
+                : "text-sm text-foreground sm:text-base lg:text-lg"
+            }`}
+          >
             {SITE_NAME}
           </span>
         </Link>
