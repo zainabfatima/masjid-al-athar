@@ -35,7 +35,11 @@ export default function DonationsPage() {
             <FeaturedHadithQuote variant="prominent" />
           </div>
 
-          <p className="mt-4 text-center text-xs font-bold uppercase tracking-wider text-primary sm:mt-5 sm:text-sm">
+          <p className="mt-4 text-center text-sm font-bold text-foreground sm:mt-5 sm:text-base">
+            Pay with Bank or Credit/Debit Cards
+          </p>
+
+          <p className="mt-2 text-center text-xs font-bold uppercase tracking-wider text-primary sm:text-sm">
             Please select below
             <br />
             campaigns to donate/pledge
@@ -48,6 +52,9 @@ export default function DonationsPage() {
       </section>
 
       <section className="section-white border-b border-border mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
+        <h2 className="mb-8 text-center font-display text-xl font-bold text-foreground sm:mb-10 sm:text-2xl">
+          Pay with Zelle
+        </h2>
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {DONATION_CARDS.map((card, index) => (
             <FadeIn key={card.id} delay={index * 0.1}>
