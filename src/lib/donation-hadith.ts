@@ -111,6 +111,12 @@ export const DONATION_QURAN_VERSES: DonationQuranVerse[] = [
 export const FEATURED_HADITH_BEFORE_DONATE: DonationHadith =
   DONATION_HADITH.find((h) => h.id === "shade-charity")!;
 
+/** Two short hadiths shown at the top of the donations page */
+export const FEATURED_HADITHS_BEFORE_DONATE: DonationHadith[] = [
+  DONATION_HADITH.find((h) => h.id === "shade-charity")!,
+  DONATION_HADITH.find((h) => h.id === "sadaqah-sins")!,
+];
+
 export type DonationSliderItem =
   | { type: "hadith"; hadith: DonationHadith }
   | { type: "quran"; verse: DonationQuranVerse };

@@ -1,3 +1,4 @@
+import { ZeffyHeadScripts } from "@/components/donations/ZeffyHeadScripts";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
@@ -40,6 +41,21 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/images/brand/masjid-al-athar-logo-download.png",
+        width: 1680,
+        height: 432,
+        alt: "Masjid Al-Athar — East Cobb Islamic Center",
+      },
+    ],
+  },
+  icons: {
+    icon: [
+      { url: "/images/brand/masjid-al-athar-icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/brand/masjid-al-athar-icon.png", sizes: "256x256", type: "image/png" },
+    ],
+    apple: "/images/brand/masjid-al-athar-icon-192.png",
   },
 };
 
@@ -57,6 +73,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${playfair.variable} h-full`}>
       <body className="flex min-h-full flex-col overflow-x-hidden antialiased">
+        <ZeffyHeadScripts />
         <ThemeProvider>
           <a
             href="#main-content"

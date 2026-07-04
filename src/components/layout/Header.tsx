@@ -1,19 +1,20 @@
 "use client";
 
+import { MasjidLogo } from "@/components/brand/MasjidLogo";
+import { Button } from "@/components/ui/Button";
 import { ChevronDown, Menu, Moon, Sun, X } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import {
+  CONTACT,
   NAV_LINKS,
   RESOURCE_LINKS,
   SITE_NAME,
+  SITE_TAGLINE,
   type NavLink,
 } from "@/lib/constants";
-import { IMAGES } from "@/lib/images";
-import { Button } from "@/components/ui/Button";
 
 function isActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -33,6 +34,36 @@ function NavLabel({ link }: { link: NavLink }) {
       <span className="xl:hidden">{link.shortLabel}</span>
       <span className="hidden xl:inline">{link.label}</span>
     </>
+  );
+}
+
+function HeaderContactInfo({ className = "" }: { className?: string }) {
+  return (
+    <div className={`text-center ${className}`}>
+      <p className="font-display text-lg font-bold leading-tight text-foreground sm:text-xl lg:text-2xl">
+        {SITE_NAME}
+      </p>
+      <p className="text-[11px] font-medium text-primary sm:text-xs lg:text-sm">
+        {SITE_TAGLINE}
+      </p>
+      <p className="mt-1 flex flex-col items-center gap-0.5 text-[10px] leading-snug text-muted-foreground sm:flex-row sm:text-xs lg:text-sm">
+        <a
+          href={`tel:${CONTACT.phone}`}
+          className="font-semibold text-foreground transition-colors hover:text-primary"
+        >
+          {CONTACT.phoneFormatted}
+        </a>
+        <span className="hidden text-border sm:mx-1.5 sm:inline" aria-hidden="true">
+          |
+        </span>
+        <a
+          href={`mailto:${CONTACT.email}`}
+          className="break-all font-semibold text-foreground transition-colors hover:text-primary sm:break-normal"
+        >
+          {CONTACT.email}
+        </a>
+      </p>
+    </div>
   );
 }
 
@@ -84,31 +115,12 @@ export function Header() {
       }`}
     >
       {/* Brand + actions */}
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          className="group flex min-w-0 shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:gap-3"
-          aria-label={`${SITE_NAME} home`}
-        >
-          <Image
-            src={IMAGES.logo.src}
-            alt={IMAGES.logo.alt}
-            width={40}
-            height={40}
-            className="h-9 w-9 shrink-0 rounded-full sm:h-10 sm:w-10"
-          />
-          <span
-            className={`truncate whitespace-nowrap font-display font-bold ${
-              pathname === "/"
-                ? "brand-title text-xl sm:text-2xl lg:text-3xl"
-                : "text-sm text-foreground sm:text-base lg:text-lg"
-            }`}
-          >
-            {SITE_NAME}
-          </span>
-        </Link>
+      <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-3 px-4 py-2.5 sm:gap-4 sm:px-6 sm:py-3 lg:px-8">
+        <MasjidLogo priority />
 
-        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+        <HeaderContactInfo className="min-w-0 px-1" />
+
+        <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2">
           {mounted && (
             <button
               type="button"
@@ -194,7 +206,7 @@ export function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`safe-bottom fixed inset-0 top-14 z-40 overflow-y-auto bg-background lg:hidden ${
+        className={`safe-bottom fixed inset-0 top-[3.25rem] z-40 overflow-y-auto bg-background sm:top-[4.5rem] lg:hidden ${
           mobileOpen ? "visible opacity-100" : "invisible pointer-events-none opacity-0"
         }`}
       >

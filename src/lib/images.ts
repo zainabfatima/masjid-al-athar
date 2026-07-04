@@ -1,10 +1,33 @@
 /** Masjid Al-Athar images from masjidalathar.org (Wix CDN) */
 const w = (file: string) => `/images/wix/${file}`;
+const b = (file: string) => `/images/brand/${file}`;
 
 export const IMAGES = {
   logo: {
-    src: w("logo.png"),
-    alt: "Masjid Al-Athar logo",
+    src: b("masjid-al-athar-logo.png"),
+    alt: "Masjid Al-Athar — East Cobb Islamic Center",
+  },
+  brand: {
+    logo: {
+      src: b("masjid-al-athar-logo.png"),
+      alt: "Masjid Al-Athar — East Cobb Islamic Center",
+    },
+    logoSvg: {
+      src: b("masjid-al-athar-logo.svg"),
+      alt: "Masjid Al-Athar — East Cobb Islamic Center",
+    },
+    logoDownload: {
+      src: b("masjid-al-athar-logo-download.png"),
+      alt: "Masjid Al-Athar logo (high resolution)",
+    },
+    icon: {
+      src: b("masjid-al-athar-icon.png"),
+      alt: "Masjid Al-Athar icon",
+    },
+    iconSvg: {
+      src: b("masjid-al-athar-icon.svg"),
+      alt: "Masjid Al-Athar icon",
+    },
   },
   slider: {
     welcome: {

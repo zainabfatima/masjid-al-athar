@@ -1,7 +1,7 @@
 import { DonationCard } from "@/components/donations/DonationCard";
+import { ZeffyCampaignGrid } from "@/components/donations/ZeffyCampaignGrid";
 import { FeaturedHadithQuote } from "@/components/donations/FeaturedHadithQuote";
 import { ContentImage } from "@/components/ui/ContentImage";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { CTASection } from "@/components/ui/CTASection";
 import {
@@ -25,14 +25,29 @@ export const metadata: Metadata = {
 export default function DonationsPage() {
   return (
     <>
+      <section className="section-white border-b border-border">
+        <div className="mx-auto flex w-full max-w-7xl flex-col px-4 py-4 sm:px-6 sm:py-5 lg:px-8">
+          <h1 className="text-center font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+            Support Masjid Al-Athar
+          </h1>
+
+          <div className="mt-3 w-full">
+            <FeaturedHadithQuote variant="prominent" />
+          </div>
+
+          <p className="mt-4 text-center text-xs font-bold uppercase tracking-wider text-primary sm:mt-5 sm:text-sm">
+            Please select below
+            <br />
+            campaigns to donate/pledge
+          </p>
+
+          <div className="mt-3 sm:mt-4">
+            <ZeffyCampaignGrid />
+          </div>
+        </div>
+      </section>
+
       <section className="section-white border-b border-border mx-auto max-w-7xl px-4 py-10 sm:py-16 sm:px-6 lg:px-8">
-        <SectionHeading
-          title="Support Masjid Al-Athar"
-          subtitle="Your generous contributions help sustain our masjid, educational programs, and community services."
-        />
-
-        <FeaturedHadithQuote />
-
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {DONATION_CARDS.map((card, index) => (
             <FadeIn key={card.id} delay={index * 0.1}>

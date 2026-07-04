@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Masjid Al-Athar">
+  <defs>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="50%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="#f0fdfa"/>
+  <g transform="translate(36, 18)">
+    <rect x="22" y="52" width="12" height="42" rx="2" fill="url(#iconGrad)"/>
+    <rect x="16" y="46" width="24" height="8" rx="2" fill="url(#iconGrad)"/>
+    <rect x="12" y="38" width="32" height="8" rx="2" fill="url(#iconGrad)"/>
+    <path d="M28 14c-6 5-9 11-9 18h18c0-7-3-13-9-18z" fill="#c9922e"/>
+    <circle cx="28" cy="12" r="4" fill="#c9922e"/>
+  </g>
+  <text x="64" y="112" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="url(#iconGrad)">MAA</text>
+</svg>

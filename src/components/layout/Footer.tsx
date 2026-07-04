@@ -1,5 +1,6 @@
+import { MasjidLogo } from "@/components/brand/MasjidLogo";
 import Link from "next/link";
-import { CONTACT, LEGAL_LINKS, NAV_LINKS, RESOURCE_LINKS, SITE_NAME, SITE_TAGLINE } from "@/lib/constants";
+import { CONTACT, LEGAL_LINKS, NAV_LINKS, RESOURCE_LINKS, SITE_NAME } from "@/lib/constants";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,12 +10,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-10">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-block">
-              <span className="font-display text-xl font-bold text-primary">
-                {SITE_NAME}
-              </span>
-            </Link>
-            <p className="mt-1 text-sm text-muted-foreground">{SITE_TAGLINE}</p>
+            <MasjidLogo className="h-16 w-auto sm:h-[4.5rem]" />
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               A 501(c)(3) non-profit Islamic center serving the Muslim community
               in Marietta, Georgia and East Cobb.
