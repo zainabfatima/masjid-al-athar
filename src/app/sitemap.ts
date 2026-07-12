@@ -1,6 +1,8 @@
 import { ALL_SITEMAP_PATHS } from "@/lib/constants";
 import type { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.masjidalathar.org";
 

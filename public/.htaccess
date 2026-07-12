@@ -1,0 +1,20 @@
+# GoDaddy / Apache — clean URLs + legacy redirects for static Next export
+
+RewriteEngine On
+
+# Legacy path redirects (previously in next.config redirects)
+RewriteRule ^about/?$ /about-us/ [R=301,L]
+RewriteRule ^donations-1/?$ /donations/ [R=301,L]
+RewriteRule ^paypal-masjid-al-athar-new-home/?$ /building-project/ [R=301,L]
+RewriteRule ^copy-of-islamic-will/?$ /services/islamic-wedding/ [R=301,L]
+RewriteRule ^copy-of-last-will/?$ /services/islamic-will/ [R=301,L]
+RewriteRule ^copy-of-islamic-wedding-1/?$ /services/family-counseling/ [R=301,L]
+RewriteRule ^voluntary-oportunities/?$ /volunteer/ [R=301,L]
+RewriteRule ^new-muslims/?$ /services/new-muslims/ [R=301,L]
+RewriteRule ^copy-of-cookies-policy/?$ /privacy-policy/ [R=301,L]
+
+# Serve directory index when trailing slash is missing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.+)$ /$1/ [R=301,L]

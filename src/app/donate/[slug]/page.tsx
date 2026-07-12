@@ -1,11 +1,15 @@
 import { ZeffyFormEmbed } from "@/components/donations/ZeffyFormEmbed";
-import { getZeffyCampaign } from "@/lib/zeffy-donations";
+import { ZEFFY_CAMPAIGNS, getZeffyCampaign } from "@/lib/zeffy-donations";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 interface DonateCampaignPageProps {
   params: Promise<{ slug: string }>;
+}
+
+export function generateStaticParams() {
+  return ZEFFY_CAMPAIGNS.map((campaign) => ({ slug: campaign.slug }));
 }
 
 export async function generateMetadata({

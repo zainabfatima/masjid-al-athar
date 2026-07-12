@@ -24,9 +24,9 @@ export const ZEFFY_CAMPAIGNS: ZeffyCampaign[] = [
       src: "/images/donations/zakat.png",
       alt: "Zakat donation campaign",
     },
-    iframeSrc: "https://www.zeffy.com/embed/donation-form/zakat-ul-maal-3",
+    iframeSrc: "https://www.zeffy.com/embed/donation-form/donate-to-change-lives-18022",
     buttonEmbedHtml:
-      'zeffy-form-link="https://www.zeffy.com/embed/donation-form/zakat-ul-maal-3?modal=true"',
+      'zeffy-form-link="https://www.zeffy.com/embed/donation-form/donate-to-change-lives-18022?modal=true"',
     configured: true,
   },
   {
@@ -36,9 +36,9 @@ export const ZEFFY_CAMPAIGNS: ZeffyCampaign[] = [
       src: "/images/donations/sadaqah.png",
       alt: "Sadaqah donation campaign",
     },
-    iframeSrc: "https://www.zeffy.com/embed/donation-form/sadaqah-13",
+    iframeSrc: "https://www.zeffy.com/embed/donation-form/donate-to-change-lives-18027",
     buttonEmbedHtml:
-      'zeffy-form-link="https://www.zeffy.com/embed/donation-form/sadaqah-13?modal=true"',
+      'zeffy-form-link="https://www.zeffy.com/embed/donation-form/donate-to-change-lives-18027?modal=true"',
     configured: true,
   },
   {

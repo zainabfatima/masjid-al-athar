@@ -28,13 +28,13 @@ Add once to the site head (deduplicated in `src/lib/zeffy-donations.ts` → `ZEF
 ### Button embed (pop-up attribute)
 
 ```
-zeffy-form-link="https://www.zeffy.com/embed/donation-form/zakat-ul-maal-3?modal=true"
+zeffy-form-link="https://www.zeffy.com/embed/donation-form/donate-to-change-lives-18022?modal=true"
 ```
 
 ### Full-page iframe URL
 
 ```
-https://www.zeffy.com/embed/donation-form/zakat-ul-maal-3
+https://www.zeffy.com/embed/donation-form/donate-to-change-lives-18022
 ```
 
 ---
@@ -50,13 +50,13 @@ https://www.zeffy.com/embed/donation-form/zakat-ul-maal-3
 ### Button embed (pop-up attribute)
 
 ```
-zeffy-form-link="https://www.zeffy.com/embed/donation-form/sadaqah-13?modal=true"
+zeffy-form-link="https://www.zeffy.com/embed/donation-form/donate-to-change-lives-18027?modal=true"
 ```
 
 ### Full-page iframe URL
 
 ```
-https://www.zeffy.com/embed/donation-form/sadaqah-13
+https://www.zeffy.com/embed/donation-form/donate-to-change-lives-18027
 ```
 
 ### Header script

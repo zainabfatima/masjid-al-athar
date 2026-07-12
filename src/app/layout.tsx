@@ -20,6 +20,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.masjidalathar.org"),
   title: {
     default: `${SITE_NAME} | East Cobb Islamic Center`,
     template: `%s | ${SITE_NAME}`,
