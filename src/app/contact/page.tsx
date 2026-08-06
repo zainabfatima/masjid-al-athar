@@ -1,3 +1,4 @@
+import { ContactForm } from "@/components/contact/ContactForm";
 import { CTASection } from "@/components/ui/CTASection";
 import { ContentImage } from "@/components/ui/ContentImage";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -67,21 +68,7 @@ export default function ContactPage() {
           </FadeIn>
 
           <FadeIn delay={0.15}>
-            <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
-              <h3 className="font-display text-xl font-bold text-foreground">
-                Send Us a Message
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Email us with your name, contact information, and message. We will
-                respond as soon as possible, in sha Allah.
-              </p>
-              <a
-                href={`mailto:${CONTACT.email}?subject=Website Contact&body=Name:%0D%0AEmail:%0D%0APhone:%0D%0A%0D%0AMessage:`}
-                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all hover:bg-primary-light"
-              >
-                Email Masjid Al-Athar
-              </a>
-            </div>
+            <ContactForm />
             <ContentImage
               src={IMAGES.masjid.mosque.src}
               alt={IMAGES.masjid.mosque.alt}
