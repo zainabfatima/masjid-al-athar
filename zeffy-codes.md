@@ -120,15 +120,15 @@ Same as shared header script (no additional script needed).
 ## Payment confirmation emails (Zeffy dashboard)
 
 Card donations are processed by **Zeffy**, not by this website’s SMTP.
-Donor receipts and org notifications must be configured in each Zeffy form’s settings.
+Set **every** Zeffy form’s org notification / confirmation email to:
 
-Recommended notification inboxes:
+`masjidalathar@gmail.com`
 
 | Campaign | Notify / org email |
 |---|---|
-| Zakat | `masjidalatharzakath@gmail.com` |
+| Zakat | `masjidalathar@gmail.com` |
 | Sadaqah | `masjidalathar@gmail.com` |
 | New Masjid Construction | `masjidalathar@gmail.com` |
 | Masjid Operations | `masjidalathar@gmail.com` |
 
-Website contact-form routing (Gmail SMTP via `/api/contact`) uses the same inboxes — see `src/lib/email-routing.ts`.
+Website contact-form emails (Gmail SMTP via `/api/contact`) also go to `masjidalathar@gmail.com`.
