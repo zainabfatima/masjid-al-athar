@@ -1,8 +1,13 @@
 import { inboxForTopic } from "@/lib/email-routing";
+import dns from "node:dns";
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
+// Gmail SMTP over IPv6 often fails on Vercel serverless.
+dns.setDefaultResultOrder("ipv4first");
+
 export const runtime = "nodejs";
+export const maxDuration = 30;
 
 const MAX_MESSAGE_LENGTH = 5000;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -16,12 +21,40 @@ type ContactBody = {
   website?: string; // honeypot
 };
 
-function requiredEnv(name: string): string {
-  const value = process.env[name]?.trim();
-  if (!value) {
-    throw new Error(`Missing environment variable: ${name}`);
+function smtpConfigured(): boolean {
+  return Boolean(process.env.SMTP_USER?.trim() && process.env.SMTP_PASS?.trim());
+}
+
+function createTransporter() {
+  const smtpUser = process.env.SMTP_USER?.trim() ?? "";
+  const smtpPass = (process.env.SMTP_PASS ?? "").replace(/\s+/g, "");
+  const smtpHost = process.env.SMTP_HOST?.trim() || "smtp.gmail.com";
+  const smtpPort = Number(process.env.SMTP_PORT || "587");
+
+  if (!smtpUser || !smtpPass) {
+    throw new Error("SMTP_NOT_CONFIGURED");
   }
-  return value;
+
+  return {
+    fromAddress: process.env.SMTP_FROM?.trim() || smtpUser,
+    transporter: nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      requireTLS: smtpPort === 587,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+      connectionTimeout: 10_000,
+      greetingTimeout: 10_000,
+      socketTimeout: 20_000,
+    }),
+  };
+}
+
+export async function GET() {
+  return NextResponse.json({ configured: smtpConfigured() });
 }
 
 export async function POST(request: Request) {
@@ -52,22 +85,19 @@ export async function POST(request: Request) {
       );
     }
 
-    const smtpUser = requiredEnv("SMTP_USER");
-    const smtpPass = requiredEnv("SMTP_PASS");
-    const smtpHost = process.env.SMTP_HOST?.trim() || "smtp.gmail.com";
-    const smtpPort = Number(process.env.SMTP_PORT || "465");
-    const fromAddress = process.env.SMTP_FROM?.trim() || smtpUser;
-    const toAddress = inboxForTopic(topic);
+    if (!smtpConfigured()) {
+      console.error("[contact] Missing SMTP_USER or SMTP_PASS on the server");
+      return NextResponse.json(
+        {
+          error:
+            "Email is not configured on the server. Add SMTP_USER and SMTP_PASS in Vercel environment variables.",
+        },
+        { status: 503 },
+      );
+    }
 
-    const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: {
-        user: smtpUser,
-        pass: smtpPass,
-      },
-    });
+    const { transporter, fromAddress } = createTransporter();
+    const toAddress = inboxForTopic(topic);
 
     const subject = `[Website Contact] ${topic} — ${name}`;
     const text = [
